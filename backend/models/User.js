@@ -1,6 +1,6 @@
 const { mongo, Schema } = require('mongoose')
 const mongoose = require('../db/comn')
-const { schema } = mongoose
+const { Schema } = mongoose
 
 const User = mongoose.model(
     'User',
@@ -12,8 +12,25 @@ const User = mongoose.model(
         email: {
          type: String,
          require: true
-        }
-    })
+        },
+        password: {
+            type: String,
+            require: true
+           },
+           image: {
+            type: String,
+            
+           },
+           phone: {
+            type: String,
+            require: true
+           },
+
+        },
+
+        { timestamps: true},
+    ),
+
 )
 
     module.exports = User
